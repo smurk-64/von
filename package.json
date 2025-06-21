@@ -1,12 +1,12 @@
 {
-  "name": "caspa",
+  "name": "KINGVON",
   "version": "1.0.",
   "description": "WhatsApp Bot 2025",
   "main": "index.js",
  "scripts": {
     "start": "node index.js"
   },
-  "author": "james",
+  "author": "KINGVON",
   "license": "ISC",
   "dependencies": {
     "baileys": "npm:naruyaizumi",
