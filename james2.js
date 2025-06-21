@@ -1,6 +1,4 @@
-/* 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗖𝗔𝗦𝗣𝗔 𝗣𝗥𝗜𝗠𝗘
-𝗖𝗟𝗢𝗡𝗘 𝗪𝗜𝗦𝗟𝗬 𝗔𝗩𝗢𝗜𝗗 𝗘𝗥𝗥𝗢𝗥𝗦
-𝗖𝗔𝗥𝗜𝗡𝗔 𝗕𝗔𝗦𝗘𝗦
+/* KINGVON
 */
 module.exports = async (lubyz, m, store) => {
 try {
@@ -52,8 +50,8 @@ const { BingImageCreator } = require("./all/bingimg.js");
 //=================================//
      // CONST DEV & INFO BOT
 const paket = 'VIP'
-const pengembang = 'caspa md'
-const bot = 'james'
+const pengembang = 'KINGVON MD'
+const bot = 'KINGVON'
 const verup = '1.0.5'
 const qloc = {
 	"key": {
@@ -64,7 +62,7 @@ const qloc = {
                         },
        "message": {
                     "locationMessage": {
-                    "name": 'James',
+                    "name": 'KINGVON',
                     "jpegThumbnail": ''
                           }
                         }
@@ -90,12 +88,12 @@ let ppuser
 try {
 ppuser = await lubyz.profilePictureUrl(m.sender, 'image')
 } catch (err) {
-ppuser = 'https://files.catbox.moe/zzmm8z.jpg'
+ppuser = 'https://files.catbox.moe/mtvyj5.jpg'
 }
 
 async function lubyzReply(teks) {
 return lubyz.sendMessage(m.chat, {text: `${teks}`, contextInfo: {mentionedJid: [m.sender], externalAdReply: {
-showAdAttribution: true, thumbnailUrl: ppuser, title: "｢ ACCESS DENIED ｣", body: "Powered By Lubyz", previewType: "PHOTO"}}}, {quoted: m})
+showAdAttribution: true, thumbnailUrl: ppuser, title: "｢ ACCESS DENIED ｣", body: "Powered By KINGVON", previewType: "PHOTO"}}}, {quoted: m})
 }
 
 const qpayment = {
@@ -129,10 +127,10 @@ participant: '0@s.whatsapp.net'
 },
 message: {
 newsletterAdminInviteMessage: {
-newsletterJid: `120363351424590490@newsletter`,
-newsletterName: `caspa`,
+newsletterJid: `120363382959814921@newsletter`,
+newsletterName: `Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ`,
 jpegThumbnail: "",
-caption: `Powered By james`,
+caption: `Powered By KINGVON`,
 inviteExpiration: Date.now() + 1814400000
 }
 }}
@@ -166,7 +164,7 @@ remoteJid: "status@broadcast"
 "description": null,
 "currencyCode": "IDR",
 "priceAmount1000": "9999999999",
-"retailerId": `Powered By Lubyz`,
+"retailerId": `Powered By KINGVON`,
 "productImageCount": 1
 },
 "businessOwnerJid": `0@s.whatsapp.net`
@@ -228,22 +226,22 @@ hello there im an automated WhatsApp bot created by james tech for helping you w
 ┕┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉┉❐
 `
  await lubyz.sendMessage(m.chat, {  
-            image: { url: "https://files.catbox.moe/zzmm8z.jpg" },  
+            image: { url: "https://files.catbox.moe/mtvyj5.jpg" },  
             caption: text12,   
             contextInfo: {
                 mentionedJid: [m.sender],
                 forwardedNewsletterMessageInfo: {
-                    newsletterName: "caspa prime",//𝗘𝗗𝗗𝗜𝗧 𝗡𝗔𝗠𝗘
-                    newsletterJid: `120363351424590490@newsletter` //𝗗𝗢𝗡𝗧 𝗘𝗗𝗗𝗜𝗧 𝗡𝗘𝗪𝗦𝗟𝗘𝗧𝗧𝗘𝗥 𝗝𝗜𝗗
+                    newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",//𝗘𝗗𝗗𝗜𝗧 𝗡𝗔𝗠𝗘
+                    newsletterJid: `120363382959814921@newsletter` //𝗗𝗢𝗡𝗧 𝗘𝗗𝗗𝗜𝗧 𝗡𝗘𝗪𝗦𝗟𝗘𝗧𝗧𝗘𝗥 𝗝𝗜𝗗
                 },
                 isForwarded: true,
                externalAdReply: {
                    showAdAttribution: true,
-                   title: `jamestech caspa prime`,
+                   title: `Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ`,
                    mediaType: 3,
                    renderLargerThumbnail: false,
-                   thumbnailUrl: 'https://files.catbox.moe/zzmm8z.jpg',
-                   sourceUrl: `https://whatsapp.com/channel/0029Vb3IiqTL7UVP9A9n0w1x`
+                   thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+                   sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
                 }
             }
         },{ quoted: qloc }
@@ -279,7 +277,7 @@ lubyz.sendContact(m.chat, [owner], "Contact owner ", null, {contextInfo: {
 mentionedJid: [m.sender], 
 externalAdReply: {
 showAdAttribution: true, 
-thumbnail: `https://files.catbox.moe/zzmm8z.jpg`, 
+thumbnail: `https://files.catbox.moe/mtvyj5.jpg`, 
 title: `© Copyright ${global.namabot}`, 
 renderLargerThumbnail: true, 
 sourceUrl: ``, 
@@ -310,7 +308,7 @@ if (!isAdmin && !Access) return lubyzReply(msg.admin)
 if (text || m.quoted) {
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await lubyz.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => lubyz.sendMessage(m.chat, {text: `Berhasil Mengeluarkan @${users.split("@")[0]} Dari Grup Ini`, mentions: [`${users}`]}, {quoted: m})).catch((err) => reply(err.toString()))
-} else return reply(example('62xxx/@tag'))}
+} else return reply(example('254***/@tag'))}
 break
         
 case "hidetag": case "ht": case "h": {
@@ -362,37 +360,37 @@ break
 
 
 //====================================\\
-      // BASE 𝗖𝗔𝗦𝗣𝗔
+      // BASE
 
  //==============================\\
  case 'credits':{
 await lubyz.sendMessage(from, {react: {text: "⏳", key: m.key}}); await sleep(500)
 const text12 = `
 *THANKS BIG TO!!*
-𝗷𝗮𝗺𝗲𝘀
-𝗳𝗿𝗶𝗲𝗻𝗱
-𝗳𝗿𝗶𝗲𝗻𝗱
-𝗳𝗿𝗶𝗲𝗻𝗱
+KINGVON
+JAMES TECH BASE
+FRIEND
+MY FOLLOWERS
 
 `
 
 await lubyz.sendMessage(m.chat, {  
-            image: { url: "https://files.catbox.moe/zzmm8z.jpg" },  
+            image: { url: "https://files.catbox.moe/mtvyj5.jpg" },  
             caption: text12,   
             contextInfo: {
                 mentionedJid: [m.sender],
                 forwardedNewsletterMessageInfo: {
-                    newsletterName: "CASPA PRIME",
-                    newsletterJid: `120363351424590490@newsletter` 
+                    newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+                    newsletterJid: `120363382959814921@newsletter` 
                 },
                 isForwarded: true,
                externalAdReply: {
                    showAdAttribution: true,
-                   title: `CASPA PRIME BY JAMES`,
+                   title: `KINGVON MD`,
                    mediaType: 3,
                    renderLargerThumbnail: false,
-                   thumbnailUrl: 'https://files.catbox.moe/zzmm8z.jpg',
-                   sourceUrl: `https://whatsapp.com/channel/0029Vb3IiqTLw1x`
+                   thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+                   sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
                 }
             }
         },{ quoted: qloc }
@@ -401,9 +399,9 @@ await lubyz.sendMessage(m.chat, {
  break;
 //===================================//
  
-   //BASE JAMES
+   //BASE
 //===============================// 
-      //BASE JAMES
+      //BASE
  
 
 
@@ -447,4 +445,4 @@ fs.unwatchFile(file)
 console.log(chalk.redBright(`Update ${__filename}`))
 delete require.cache[file]
 require(file)
-})//𝗘𝗡𝗝𝗢𝗬 𝗕𝗬 ©𝗝𝗔𝗠𝗘𝗦
+})//𝗘𝗡𝗝𝗢𝗬
