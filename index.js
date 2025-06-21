@@ -1,5 +1,5 @@
 /*
-carina bases*/
+VON bases*/
 
 require("./all/global")
 
@@ -25,18 +25,18 @@ const { version, isLatest } = await fetchLatestBaileysVersion()
 
 
 console.log(chalk.blue.bold(`
-WELCOME TO CASPA PRIME
+WELCOME TO KINGVON MD
 ${chalk.yellow.bold(`
 VERSION : 1.0. `)}
 ${chalk.magenta.bold(`
 MODE BRUTAL`)}
 ${chalk.green.bold("📃 Information :")}   
 ${chalk.red.bold(`
-▢ Script : caspa
-▢ Author : james
+▢ Script : KINGVON MD
+▢ Author : KINGVON
 ▢ Versi : 1.0
 `)}
-${chalk.white.italic("Created By james")}\n`));
+${chalk.white.italic("Created By KINGVON")}\n`));
 
 const connectionOptions = {
 version,
@@ -51,13 +51,13 @@ const msg = await store.loadMessage(key.remoteJid, key.id, undefined)
 return msg?.message || undefined
 }
 return {
-conversation: 'Bot By james'
+conversation: 'Bot By KINGVON'
 }}
 }
 
 const lubyz = func.makeWASocket(connectionOptions)
 if (usePairingCode && !lubyz.authState.creds.registered) {
-const phoneNumber = await question(color('NUMBER FOR PAIRING EXAMPLE 254785016388 :\n', 'green'));
+const phoneNumber = await question(color('NUMBER FOR PAIRING EXAMPLE 254720326316 :\n', 'green'));
 const code = await lubyz.requestPairingCode(phoneNumber.trim())
 console.log(`${chalk.redBright('Your Pairing Code')} : ${code}`)
 }
@@ -150,7 +150,7 @@ let tag = check ? [anu.author, num] : [num]
 try {
 ppuser = await lubyz.profilePictureUrl(num, 'image')
 } catch {
-ppuser = 'https://files.catbox.moe/zzmm8z.jpg'
+ppuser = 'https://files.catbox.moe/mtvyj5.jpg'
 }
 if (anu.action == 'add') {
 lubyz.sendMessage(anu.id, {text: check ? `@${anu.author.split("@")[0]} Telah Menambahkan @${num.split("@")[0]} Ke Dalam Grup Ini` : `Hallo Kak @${num.split("@")[0]} Selamat Datang Di *${namagc}*`, 
