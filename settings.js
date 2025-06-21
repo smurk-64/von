@@ -4,20 +4,20 @@ require("./all/module.js")
 const { color } = require('./all/function')
 const { version } = require("./package.json")
 //========== Setting Owner ==========//
-global.owner = "254704955033"
-global.owner2 = "james"
-global.namaowner = "james"
-global.botname = "caspa prime"
+global.owner = "254720326316"
+global.owner2 = "KINGVON"
+global.namaowner = "KINGVON"
+global.botname = "KINGVON MD"
 //======== Setting Bot & Link ========//
-global.namabot = "caspa" 
-global.namabot2 = "caspa"
-global.foother = "© - james"
+global.namabot = "KINGVON" 
+global.namabot2 = "KINGVON"
+global.foother = "© - KINGVON"
 global.versibot = "1.0"
 global.idsaluran = false
 global.linkgc = 'https://whatsapp.com/channel/0029Vb3IiqTL7UVP9A9n0w1x'
 global.linksaluran = "https://whatsapp.com/channel/0029Vb3IiqTL7UVP9A9n0w1x"
 global.linkyt = 'https://youtube.com/@lubyz'
-global.linktele = 'https://t.me/lubyz'
+global.linktele = 'https://t.me/KINGVON'
 global.packname = "Lubyz V1.5"
 global.author = "Lubyz"
 
