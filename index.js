@@ -96,11 +96,11 @@ startSesi()
 console.log(color('Menghubungkan . . . '))
 } else if (connection === "open") {
 let teksnotif = `
-*caspa connected *
+*KINGVON MD connected *
 
  *▢ Botname :* ${global.namabot2}
  *▢ Version :* 1.0
- *▢ Nomor : ${lubyz.user.id.split(":")[0]}*`
+ *▢ Name : ${lubyz.user.id.split(":")[0]}*`
 lubyz.sendMessage( global.owner+"@s.whatsapp.net", {text: teksnotif})
 console.log(color('Bot Berhasil Tersambung'))
 }
