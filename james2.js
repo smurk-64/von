@@ -189,7 +189,13 @@ message: {
 sendEphemeral: true
 }}
 }
-
+	
+if (set.autobio) {
+			if (new Date() * 1 - set.status > 60000) {
+				await naze.updateProfileStatus(`${naze.user.name} | 🎯KINGVON MD Runtime : ${runtime(process.uptime())}`).catch(e => {})
+				set.status = new Date() * 1
+			}
+}
 
 switch (command) {
 case 'menu': {
@@ -317,6 +323,14 @@ reply("*bot on public*")
 }
 break
 
+		case 'setbio': {
+				if (!isCreator) return m.reply(mess.owner)
+				if (!text) return m.reply('Where is the text?')
+				naze.setStatus(q)
+				m.reply(`*Bio changed to ${q}*`)
+			}
+			break
+		
 case "self": {
 if (!Access) return lubyzReply(msg.owner)
 lubyz.public = false
