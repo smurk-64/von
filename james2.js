@@ -190,11 +190,16 @@ sendEphemeral: true
 }}
 }
 	
+let set = {
+    autobio: true, // or false depending on your need
+    status: 0
+}
+
 if (set.autobio) {
-			if (new Date() * 1 - set.status > 60000) {
-				await naze.updateProfileStatus(`${naze.user.name} | 🎯KINGVON MD Runtime : ${runtime(process.uptime())}`).catch(e => {})
-				set.status = new Date() * 1
-			}
+    if (new Date() * 1 - set.status > 60000) {
+        await naze.updateProfileStatus(`${naze.user.name} | 🎯KINGVON MD Runtime : ${runtime(process.uptime())}`).catch(e => {})
+        set.status = new Date() * 1
+    }
 }
 
 switch (command) {
