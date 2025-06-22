@@ -418,11 +418,18 @@ break
  case 'credits':{
 await lubyz.sendMessage(from, {react: {text: "⏳", key: m.key}}); await sleep(500)
 const text12 = `
-*THANKS BIG TO!!*
-KINGVON
-JAMES TECH BASE
-FRIEND
-MY FOLLOWERS
+╔═━──━──━──━──━──━──━──━═╗
+    💥 𝐁𝐈𝐆 𝐒𝐇𝐎𝐔𝐓 𝐎𝐔𝐓 𝗧𝗢💥
+╚═━──━──━──━──━──━──━──━═╝
+
+> 🔹 𝗞𝗜𝗡𝗚𝗩𝗢𝗡 — 🐐  
+> 🔹 𝗝𝗔𝗠𝗘𝗦 𝗧𝗘𝗖𝗛 𝗕𝗔𝗦𝗘 — 💻 
+> 🔹 𝗙𝗥𝗜𝗘𝗡𝗗 — 🤝  
+> 🔹 𝗠𝗬 𝗙𝗢𝗟𝗟𝗢𝗪𝗘𝗥𝗦 — 🚀
+
+━━━━━━━━━━━━━━━━━━━━━━━
+> 🔥 𝗠𝗨𝗖𝗛 𝗟𝗢𝗩𝗘 & 𝗥𝗘𝗦𝗣𝗘𝗖𝗧 🔥  
+> 🎯 𝗧𝗢 𝗔𝗟𝗟 𝗪𝗛𝗢 𝗥𝗢𝗖𝗞 𝗪𝗜𝗧𝗛 𝗠𝗘 🎯
 
 `
 
