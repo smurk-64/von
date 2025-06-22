@@ -25,18 +25,18 @@ const { version, isLatest } = await fetchLatestBaileysVersion()
 
 
 console.log(chalk.blue.bold(`
-WELCOME TO CASPA PRIME
+WELCOME TO KINGVON MD
 ${chalk.yellow.bold(`
 VERSION : 1.0. `)}
 ${chalk.magenta.bold(`
 MODE BRUTAL`)}
 ${chalk.green.bold("📃 Information :")}   
 ${chalk.red.bold(`
-▢ Script : caspa
-▢ Author : james
-▢ Versi : 1.0
+▢ Script : KINGVON MD
+▢ Author : KINGVON
+▢ Version : 1.0
 `)}
-${chalk.white.italic("Created By james")}\n`));
+${chalk.white.italic("Created By KINGVON")}\n`));
 
 const connectionOptions = {
 version,
@@ -51,7 +51,7 @@ const msg = await store.loadMessage(key.remoteJid, key.id, undefined)
 return msg?.message || undefined
 }
 return {
-conversation: 'Bot By james'
+conversation: 'Bot By KINGVON'
 }}
 }
 
@@ -93,16 +93,22 @@ console.log(color('Connection TimedOut, Reconnecting...'))
 startSesi()
 }
 } else if (connection === "connecting") {
-console.log(color('Menghubungkan . . . '))
+console.log(color('Connecting . . . '))
 } else if (connection === "open") {
 let teksnotif = `
-*caspa connected *
+╔════════════════════════╗
+   🤖 KINGVON MD CONNECTED 🤖
+╚════════════════════════╝
 
- *▢ Botname :* ${global.namabot2}
- *▢ Version :* 1.0
- *▢ Nomor : ${lubyz.user.id.split(":")[0]}*`
+╔━━━━━━━━━━━━━━━━━━━━━━━╗
+┃ 🔹 *Bot Name:* ${global.namabot2}
+┃ 🔹 *Version :* 1.0
+┃ 🔹 *User    :* ${lubyz.user.id.split(":")[0]}
+╚━━━━━━━━━━━━━━━━━━━━━━━╝
+
+✅ Status: Online & Ready to Serve!`
 lubyz.sendMessage( global.owner+"@s.whatsapp.net", {text: teksnotif})
-console.log(color('Bot Berhasil Tersambung'))
+console.log(color('Bot successfuly connected'))
 }
 })
 
