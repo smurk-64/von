@@ -57,7 +57,7 @@ conversation: 'Bot By KINGVON'
 
 const lubyz = func.makeWASocket(connectionOptions)
 if (usePairingCode && !lubyz.authState.creds.registered) {
-const phoneNumber = await question(color('NUMBER FOR PAIRING EXAMPLE 254785016388 :\n', 'green'));
+const phoneNumber = await question(color('NUMBER FOR PAIRING EXAMPLE 254720326316 :\n', 'green'));
 const code = await lubyz.requestPairingCode(phoneNumber.trim())
 console.log(`${chalk.redBright('Your Pairing Code')} : ${code}`)
 }
@@ -136,7 +136,7 @@ if (!lubyz.public && m.key.remoteJid !== global.owner+"@s.whatsapp.net" && !m.ke
 if (m.key.id.startsWith('BAE5') && m.key.id.length === 16) return
 if (global.autoread) lubyz.readMessages([m.key])
 m = func.smsg(lubyz, m, store)
-require("./james2.js")(lubyz, m, store)
+require("./von.js")(lubyz, m, store)
 } catch (err) {
 console.log(err)
 }
