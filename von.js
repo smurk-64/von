@@ -358,7 +358,49 @@ fs.writeFileSync('./all/database/owner.json', JSON.stringify(kontributor))
 reply(`${prem1} Sudah menjadi kontributor!!!`)
 lubyz.sendMessage(prem1+'@s.whatsapp.net', {image: {url: `https://files.catbox.moe/zzmm8z.jpg`}, caption: `Kamu sekarang adalah owner / kontributor bot`},{quoted: qloc})
  }
-break;              
+break;      
+
+		case 'bugmenu': {
+    await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
+    await sleep(500);
+
+    const bugMenuText = `
+╔═━──━──━──━──━──━═══╗
+      🐞 𝐁𝐔𝐆 𝐌𝐄𝐍𝐔 🐞
+╚═━──━──━──━──━──━═══╝
+
+> 🚩 𝟏. voncrash
+> 🚩 𝟐. 𝐒𝐭𝐢𝐜𝐤𝐞𝐫 𝐒𝐩𝐚𝐦 𝐁𝐮𝐠
+> 🚩 𝟑. 𝐃𝐨𝐜𝐮𝐦𝐞𝐧𝐭 𝐂𝐫𝐚𝐬𝐡 𝐁𝐮𝐠
+> 🚩 𝟒. 𝐈𝐦𝐚𝐠𝐞 𝐋𝐚𝐠 𝐁𝐮𝐠
+> 🚩 𝟓. 𝐂𝐡𝐚𝐭 𝐁𝐥𝐨𝐜𝐤 𝐁𝐮𝐠
+
+━━━━━━━━━━━━━━━━━━━━━━━
+> ⚡ 𝐔𝐬𝐞 𝐰𝐢𝐬𝐞𝐥𝐲. 𝐈 𝐚𝐦 𝐧𝐨𝐭 𝐫𝐞𝐬𝐩𝐨𝐧𝐬𝐢𝐛𝐥𝐞 𝐟𝐨𝐫 𝐚𝐛𝐮𝐬𝐞 ⚡
+`;
+
+    await lubyz.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+        caption: bugMenuText,
+        contextInfo: {
+            mentionedJid: [m.sender],
+            forwardedNewsletterMessageInfo: {
+                newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+                newsletterJid: `120363382959814921@newsletter`
+            },
+            isForwarded: true,
+            externalAdReply: {
+                showAdAttribution: true,
+                title: `KINGVON MD`,
+                mediaType: 3,
+                renderLargerThumbnail: false,
+                thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+                sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+            }
+        }
+    }, { quoted: qloc });
+}
+break;
 
   
 case "kik": case "kick": case "sulap": {
