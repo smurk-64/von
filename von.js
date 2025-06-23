@@ -360,7 +360,7 @@ lubyz.sendMessage(prem1+'@s.whatsapp.net', {image: {url: `https://files.catbox.m
  }
 break;      
 
-		case 'bugmenu': {
+    case 'bugmenu': {
     await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
     await sleep(500);
 
@@ -400,7 +400,117 @@ break;
         }
     }, { quoted: qloc });
 }
-break;
+break
+		case 'block':
+case 'blok': {
+    if (!isCreator) return reply(mess.creator);
+    if (!text) return reply(`Enter the target number!`);
+
+    await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
+    await sleep(500);
+
+    let blok = q.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+    await conn.updateBlockStatus(blok, 'block');
+
+    const blockText = `✅ Successfully blocked @${blok.split('@')[0]}`;
+
+    await lubyz.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+        caption: blockText,
+        contextInfo: {
+            mentionedJid: [m.sender, blok],
+            forwardedNewsletterMessageInfo: {
+                newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+                newsletterJid: `120363382959814921@newsletter`
+            },
+            isForwarded: true,
+            externalAdReply: {
+                showAdAttribution: true,
+                title: `KINGVON MD`,
+                mediaType: 3,
+                renderLargerThumbnail: false,
+                thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+                sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+            }
+        }
+    }, { quoted: qloc });
+
+    db.data.users[m.sender].exp += await randomNomor(60);
+}
+break
+
+case 'unblock':
+case 'unblok': {
+    if (!isCreator) return reply(mess.creator);
+    if (!text) return reply(`Enter the target number!`);
+
+    await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
+    await sleep(500);
+
+    let unblok = q.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+    await conn.updateBlockStatus(unblok, 'unblock');
+
+    const unblockText = `✅ Successfully unblocked @${unblok.split('@')[0]}`;
+
+    await lubyz.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+        caption: unblockText,
+        contextInfo: {
+            mentionedJid: [m.sender, unblok],
+            forwardedNewsletterMessageInfo: {
+                newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+                newsletterJid: `120363382959814921@newsletter`
+            },
+            isForwarded: true,
+            externalAdReply: {
+                showAdAttribution: true,
+                title: `KINGVON MD`,
+                mediaType: 3,
+                renderLargerThumbnail: false,
+                thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+                sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+            }
+        }
+    }, { quoted: qloc });
+
+    db.data.users[m.sender].exp += await randomNomor(60);
+}
+break
+
+case 'listblock':
+case 'listblok': {
+    await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
+    await sleep(500);
+
+    let listblok = await conn.fetchBlocklist();
+    let listText = '*📋 BLOCKED LIST 📋*\n';
+    listText += `Total: ${listblok == undefined ? '*0* blocked' : '*' + listblok.length + '* blocked'}\n\n`;
+    listText += listblok.length > 0 ? listblok.map(v => '» @' + v.replace(/@.+/, '')).join('\n') : 'No numbers are currently blocked.';
+
+    await lubyz.sendMessage(m.chat, {
+        image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+        caption: listText,
+        contextInfo: {
+            mentionedJid: listblok.length > 0 ? listblok.concat([m.sender]) : [m.sender],
+            forwardedNewsletterMessageInfo: {
+                newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+                newsletterJid: `120363382959814921@newsletter`
+            },
+            isForwarded: true,
+            externalAdReply: {
+                showAdAttribution: true,
+                title: `KINGVON MD`,
+                mediaType: 3,
+                renderLargerThumbnail: false,
+                thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+                sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+            }
+        }
+    }, { quoted: qloc });
+
+    db.data.users[m.sender].exp += await randomNomor(60);
+}
+break
 
   
 case "kik": case "kick": case "sulap": {
