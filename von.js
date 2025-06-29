@@ -530,6 +530,7 @@ KINGVON auto-detects.`,
     headerType: 1,
     viewOnce: true
   }, { quoted: m });
+ await lubyz.sendMessage(m.chat, { text: jid }, { quoted: m });
 
   break;
 	      }
