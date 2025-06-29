@@ -755,7 +755,6 @@ case 'runtime': {
 }
 		case 'block':
 case 'blok': {
-    if (!isCreator) return reply(mess.creator);
     if (!text) return reply(`Enter the target number!`);
 
     await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
@@ -793,7 +792,6 @@ break
 
 case 'unblock':
 case 'unblok': {
-    if (!isCreator) return reply(mess.creator);
     if (!text) return reply(`Enter the target number!`);
 
     await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
