@@ -299,7 +299,7 @@ const text12 = `
         },{ quoted: qloc }
      ),
        await lubyz.sendMessage(m.chat, { 
-           audio: { url: 'https://files.catbox.moe/l8inzd.mp3' },
+           audio: { url: 'https://files.catbox.moe/ptysy6.mp3' },
            mimetype: 'audio/mp4', 
            ptt: true 
        },{ quoted: qloc }
@@ -435,7 +435,7 @@ lubyz.sendMessage(m.chat, {
 }, { quoted: m });
 
 lubyz.sendMessage(m.chat, { 
-  audio: { url: 'https://files.catbox.moe/l8inzd.mp3' }, 
+  audio: { url: 'https://files.catbox.moe/ptysy6.mp3' }, 
   mimetype: 'audio/mpeg', 
   ptt: true 
 });
