@@ -431,7 +431,7 @@ lubyz.sendMessage(m.chat, {
 }, { quoted: qtext2 });
 
 lubyz.sendMessage(m.chat, { 
-  audio: fs.readFileSync('./media/menu.mp3'), 
+  audio: { url: 'https://files.catbox.moe/l8inzd.mp3' }, 
   mimetype: 'audio/mpeg', 
   ptt: true 
 });
