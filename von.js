@@ -363,7 +363,9 @@ break;
     //========[ Bug Menu ]========//
 case 'bugmenu' : {
 await lubyz.sendMessage(m.chat, { react: { text: `🖕`, key: m.key }});
-bugmenu = 
+
+const imgmenu = 'https://files.catbox.moe/mtvyj5.jpg'; // replace with your image if needed
+const bugmenu = 
 `
 ⛧━━━━━━━━━━━━━⟡⟡⟡━━━━━━━━━━━━━⛧
        ⟦ 𖤐 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨 𖤐 ⟧
@@ -377,7 +379,10 @@ bugmenu =
 
 ⛧━━━━━━━━━━━━━⟡⟡⟡━━━━━━━━━━━━━⛧
 `
-lubyz.sendMessage(m.chat, {image: {url: imgmenu }, caption: bugmenu ,
+
+lubyz.sendMessage(m.chat, {
+  image: { url: imgmenu },
+  caption: bugmenu,
   footer: "𝐊𝐈𝐍𝐆𝐕𝐎𝐍",
   buttons: [
     {
@@ -388,18 +393,18 @@ lubyz.sendMessage(m.chat, {image: {url: imgmenu }, caption: bugmenu ,
       type: 1,
     },
     {
-    buttonId: 'action',
-    buttonText: {
-    displayText: 'ＫＩＮＧＶＯＮＦＩＸＥＲ'
-    },
-    type: 4,
+      buttonId: 'action',
+      buttonText: {
+        displayText: 'ＫＩＮＧＶＯＮＦＩＸＥＲ'
+      },
+      type: 4,
       nativeFlowInfo: {
         name: 'single_select',
         paramsJson: JSON.stringify({
           title: 'ＫＩＮＧＶＯＮＦＩＸＥＲ',
           sections: [
             {
-              title: namaowner,
+              title: namaowner || "Owner", // fallback if namaowner is undefined
               highlight_label: 'powered by : 𝐊𝐈𝐍𝐆𝐕𝐎𝐍',
               rows: [
                 {
@@ -423,8 +428,13 @@ lubyz.sendMessage(m.chat, {image: {url: imgmenu }, caption: bugmenu ,
   ],
   headerType: 1,
   viewOnce: true
-}, { quoted: qtext2 })
-lubyz.sendMessage(m.chat, {audio: fs.readFileSync('./media/menu.mp3'), mimetype:'audio/mpeg', ptt: true});
+}, { quoted: qtext2 });
+
+lubyz.sendMessage(m.chat, { 
+  audio: fs.readFileSync('./media/menu.mp3'), 
+  mimetype: 'audio/mpeg', 
+  ptt: true 
+});
 }
 break
 //========[ Owner Fitur ]========//
