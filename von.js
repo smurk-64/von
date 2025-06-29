@@ -375,16 +375,18 @@ break
     contextInfo: {
       forwardedNewsletterMessageInfo: {
         newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
-        newsletterJid: "120363382959814921@newsletter" // replace with your channel JID
+        newsletterJid: "120363382959814921@newsletter"
       },
       isForwarded: true
     },
     headerType: 1,
     viewOnce: true
   }, { quoted: tempMsg });
-  }
-  break
-		case 'ping2': {
+
+  break; // ✅ moved inside
+}
+
+case 'ping2': {
   await lubyz.sendMessage(m.chat, { react: { text: `📶`, key: m.key } });
 
   const start = Date.now();
@@ -411,15 +413,16 @@ break
     contextInfo: {
       forwardedNewsletterMessageInfo: {
         newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
-        newsletterJid: "120363382959814921@newsletter" // replace with your channel JID
+        newsletterJid: "120363382959814921@newsletter"
       },
       isForwarded: true
     },
     headerType: 1,
     viewOnce: true
   }, { quoted: tempMsg });
-  }
-  break;
+
+  break; // ✅ moved inside
+}
 
  case 'addowner': {
 if (!Access) return reply(msg.owner)
