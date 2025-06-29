@@ -349,7 +349,7 @@ break
   await lubyz.sendMessage(m.chat, { react: { text: `🏓`, key: m.key } });
 
   const start = Date.now();
-  const tempMsg = await lubyz.sendMessage(m.chat, { text: '> *𝐏𝐈𝐍𝐆 𝐓𝐄𝐒𝐓𝐈𝐍𝐆...*' }, { quoted: m });
+  const tempMsg = await lubyz.sendMessage(m.chat, { text: `> *𝐏𝐈𝐍𝐆 𝐓𝐄𝐒𝐓𝐈𝐍𝐆...*` }, { quoted: m });
   const ping = Date.now() - start;
 
   const caption = `
@@ -388,7 +388,7 @@ break
   await lubyz.sendMessage(m.chat, { react: { text: `📶`, key: m.key } });
 
   const start = Date.now();
-  const tempMsg = await lubyz.sendMessage(m.chat, { text: '> *𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃...*' }, { quoted: m });
+  const tempMsg = await lubyz.sendMessage(m.chat, { text: `> *𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃...*` }, { quoted: m });
   const ping = Date.now() - start;
 
   const caption = `
