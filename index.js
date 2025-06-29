@@ -136,7 +136,7 @@ if (!lubyz.public && m.key.remoteJid !== global.owner+"@s.whatsapp.net" && !m.ke
 if (m.key.id.startsWith('BAE5') && m.key.id.length === 16) return
 if (global.autoread) lubyz.readMessages([m.key])
 m = func.smsg(lubyz, m, store)
-require("./james2.js")(lubyz, m, store)
+require("./von.js")(lubyz, m, store)
 } catch (err) {
 console.log(err)
 }
