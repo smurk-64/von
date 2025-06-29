@@ -170,7 +170,8 @@ remoteJid: "status@broadcast"
 "businessOwnerJid": `0@s.whatsapp.net`
 }}
 }
-
+const reply = (text) => lubyz.sendMessage(m.chat, { text }, { quoted: m });
+	
 const qtext = { key: {fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "0@s.whatsapp.net"} : {}) },'message': {extendedTextMessage: {text: "Thank you for using my services"}}}
 
 const qdoc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {documentMessage: {title: `Powered By ${namaowner}`, jpegThumbnail: ""}}}
