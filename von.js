@@ -442,6 +442,103 @@ lubyz.sendMessage(m.chat, {
 }
 break
 //========[ Owner Fitur ]========//
+		case 'ownermenu' : {
+await lubyz.sendMessage(m.chat, { react: { text: `🧨`, key: m.key }});
+
+const imgmenu = 'https://files.catbox.moe/mtvyj5.jpg'; // replace with your image if needed
+const bugmenu = 
+`
+╔═════════════════════╗
+ 👑 𝐎𝐖𝐍𝐄𝐑 𝐌𝐄𝐍𝐔 👑  
+ 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 𝐊𝐈𝐍𝐆𝐕𝐎𝐍 ✨
+╚═════════════════════╝
+
+> 🔐 𝗥𝗲𝘀𝘁𝗿𝗶𝗰𝘁𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀  
+══════════════════════════
+
+┌───🔥*𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦*🔥──┐
+│ ⏣ *public*        
+│ ⏣ *self*          
+│ ⏣ *addowner*      
+│ ⏣ *delowner*      
+│ ⏣ *owner*         
+│ ⏣ *setppbot*      
+│ ⏣ *setnamebot*    
+│ ⏣ *setbio*        
+│ ⏣ *block*         
+│ ⏣ *unblock*       
+│ ⏣ *shutdown*      
+│ ⏣ *restart*       
+└─────────────────────────┘
+
+┏━━━━━━━━━━━━━━━━━━━━┓
+┃ ⏣ 𝐊𝐈𝐍𝐆𝐕𝐎𝐍 𝐃𝐄𝐕 👑 💻  
+┗━━━━━━━━━━━━━━━━━━━━┛
+`
+
+lubyz.sendMessage(m.chat, {
+  image: { url: imgmenu },
+  caption: bugmenu,
+  footer: "𝐊𝐈𝐍𝐆𝐕𝐎𝐍",
+  buttons: [
+    {
+      buttonId: '.credits',
+      buttonText: {
+        displayText: 'ᴛʜᴀɴᴋs ᴛᴏ'
+      },
+      type: 1,
+    },
+    {
+      buttonId: 'action',
+      buttonText: {
+        displayText: '𝐊𝐈𝐍𝐆𝐕𝐎𝐍'
+      },
+      type: 4,
+      nativeFlowInfo: {
+        name: 'single_select',
+        paramsJson: JSON.stringify({
+          title: '𝐊𝐈𝐍𝐆𝐕𝐎𝐍',
+          sections: [
+            {
+              title: namaowner || "Owner", // fallback if namaowner is undefined
+              highlight_label: 'powered by : 𝐊𝐈𝐍𝐆𝐕𝐎𝐍',
+              rows: [
+                {
+                  header: 'ᴏᴡɴᴇʀ',
+                  title: 'owner',
+                  description: 'Contact my Developer',
+                  id: '.owner',
+                },
+		{
+                  header: 'ᴀʟʟ ᴍᴇɴᴜ',
+                  title: 'All menu',
+                  description: 'Display full menu',
+                  id: '.menu',
+                },
+                {
+                  header: 'ʙᴜɢ ᴍᴇɴᴜ',
+                  title: 'bug menu',
+                  description: 'Display bug menu',
+                  id: '.bugmenu',
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    },
+  ],
+  headerType: 1,
+  viewOnce: true
+}, { quoted: m });
+
+lubyz.sendMessage(m.chat, { 
+  audio: { url: 'https://files.catbox.moe/ptysy6.mp3' }, 
+  mimetype: 'audio/mpeg', 
+  ptt: true 
+});
+}
+break
 		case 'block':
 case 'blok': {
     if (!isCreator) return reply(mess.creator);
