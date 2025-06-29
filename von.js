@@ -614,6 +614,68 @@ lubyz.sendMessage(m.chat, {
 });
 }
 break
+		case 'uptime':
+case 'runtime': {
+  await lubyz.sendMessage(m.chat, { react: { text: `⚡`, key: m.key } });
+
+  const runtime = process.uptime();
+
+  const formatTime = (seconds) => {
+    const pad = (s) => (s < 10 ? '0' + s : s);
+    const days = Math.floor(seconds / 86400);
+    const hrs = Math.floor((seconds % 86400) / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    return `📅 *DAYS:* ${pad(days)}\n⏰ *HOURS:* ${pad(hrs)}\n🕒 *MINUTES:* ${pad(mins)}\n⏱ *SECONDS:* ${pad(secs)}`;
+  };
+
+  const caption = `
+╭═━──━──━──━──━──━═══╗
+┃       👑 𝐊𝐈𝐍𝐆𝐕𝐎𝐍 𝐌𝐃 👑       ┃
+╰═━──━──━──━──━──━═══╝
+
+╭⭓ 𝐔𝐏𝐓𝐈𝐌𝐄 𝐒𝐓𝐀𝐓𝐔𝐒 ⭒
+┃
+┃ ${formatTime(runtime)}
+┃
+╰⭓━━━━━━━━━━━━━━━━━━⭒
+
+╭⭓ 𝐒𝐘𝐒𝐓𝐄𝐌 𝐈𝐍𝐅𝐎 ⭒
+┃ 💠 *POWER MODE:* 𝙏𝙐𝙍𝘽𝙊 𝙊𝙉⚡  
+┃ 👨‍💻 *CREATOR:* 𝗞𝗜𝗡𝗚𝗩𝗢𝗡  
+╰⭓━━━━━━━━━━━━━━━━━━⭒
+
+╭⭓ 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐈𝐎𝐍 ⭒
+┃ 🛰️ *STATUS:* ONLINE ✅  
+┃ 📡 *CHANNEL:* @BINΔRY_BΔSE  
+╰⭓━━━━━━━━━━━━━━━━━━⭒
+
+        🔗 _✅✅✅✅✅✅_
+`;
+
+  await lubyz.sendMessage(m.chat, {
+    text: caption,
+    footer: "🧠 KINGVON MD | SYSTEM CORE ⚙",
+    buttons: [
+      {
+        buttonId: '.menu',
+        buttonText: { displayText: '📂 𝐀𝐋𝐋 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒' },
+        type: 1,
+      },
+    ],
+    contextInfo: {
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: "120363382959814921@newsletter"
+      },
+      isForwarded: true
+    },
+    headerType: 1,
+    viewOnce: true
+  }, { quoted: m });
+
+  break;
+}
 		case 'block':
 case 'blok': {
     if (!isCreator) return reply(mess.creator);
