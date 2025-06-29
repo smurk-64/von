@@ -345,7 +345,81 @@ mediaType: 1
 }}})
 }
 break
-        
+        case 'ping': {
+  await lubyz.sendMessage(m.chat, { react: { text: `🏓`, key: m.key } });
+
+  const start = Date.now();
+  const tempMsg = await lubyz.sendMessage(m.chat, { text: '> *𝐏𝐈𝐍𝐆 𝐓𝐄𝐒𝐓𝐈𝐍𝐆...*' }, { quoted: m });
+  const ping = Date.now() - start;
+
+  const caption = `
+╭──〔KINGVON MD PING〕───·๏
+┃🛸┃• *⏳ SPEED*: ${ping}ms
+┃🛸┃• *👨‍💻 CREATOR*: KINGVON
+╰──────────────┈⊷
+© KINGVON
+`;
+
+  await lubyz.sendMessage(m.chat, {
+    text: caption,
+    footer: "𝐊𝐈𝐍𝐆𝐕𝐎𝐍",
+    buttons: [
+      {
+        buttonId: '.menu',
+        buttonText: {
+          displayText: '📑 𝐀𝐋𝐋 𝐌𝐄𝐍𝐔'
+        },
+        type: 1,
+      },
+    ],
+    contextInfo: {
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: "120363382959814921@newsletter" // replace with your channel JID
+      },
+      isForwarded: true
+    },
+    headerType: 1,
+    viewOnce: true
+  }, { quoted: tempMsg });
+  }
+  break
+		case 'ping2': {
+  await lubyz.sendMessage(m.chat, { react: { text: `📶`, key: m.key } });
+
+  const start = Date.now();
+  const tempMsg = await lubyz.sendMessage(m.chat, { text: '> *𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃...*' }, { quoted: m });
+  const ping = Date.now() - start;
+
+  const caption = `
+┣━━━━━━━━━━━━━━━━━━━
+┃  *𝐊𝐈𝐍𝐆𝐕𝐎𝐍 𝐌𝐃 𝐒𝐏𝐄𝐄𝐃*: ${ping}ms
+┗━━━━━━━━━━━━━━━━━━━`;
+
+  await lubyz.sendMessage(m.chat, {
+    text: caption,
+    footer: "𝐊𝐈𝐍𝐆𝐕𝐎𝐍",
+    buttons: [
+      {
+        buttonId: '.menu',
+        buttonText: {
+          displayText: '📑 𝐀𝐋𝐋 𝐌𝐄𝐍𝐔'
+        },
+        type: 1,
+      },
+    ],
+    contextInfo: {
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: "120363382959814921@newsletter" // replace with your channel JID
+      },
+      isForwarded: true
+    },
+    headerType: 1,
+    viewOnce: true
+  }, { quoted: tempMsg });
+  }
+  break;
 
  case 'addowner': {
 if (!Access) return reply(msg.owner)
