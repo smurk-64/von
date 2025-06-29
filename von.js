@@ -362,7 +362,7 @@ break;
 
     //========[ Bug Menu ]========//
 case 'bugmenu' : {
-await kirana.sendMessage(m.chat, { react: { text: `🖕`, key: m.key }});
+await lubyz.sendMessage(m.chat, { react: { text: `🖕`, key: m.key }});
 bugmenu = 
 `
 ⛧━━━━━━━━━━━━━⟡⟡⟡━━━━━━━━━━━━━⛧
@@ -377,7 +377,7 @@ bugmenu =
 
 ⛧━━━━━━━━━━━━━⟡⟡⟡━━━━━━━━━━━━━⛧
 `
-kirana.sendMessage(m.chat, {image: {url: imgmenu }, caption: bugmenu ,
+lubyz.sendMessage(m.chat, {image: {url: imgmenu }, caption: bugmenu ,
   footer: "𝐊𝐈𝐍𝐆𝐕𝐎𝐍",
   buttons: [
     {
@@ -424,7 +424,7 @@ kirana.sendMessage(m.chat, {image: {url: imgmenu }, caption: bugmenu ,
   headerType: 1,
   viewOnce: true
 }, { quoted: qtext2 })
-kirana.sendMessage(m.chat, {audio: fs.readFileSync('./media/menu.mp3'), mimetype:'audio/mpeg', ptt: true});
+lubyz.sendMessage(m.chat, {audio: fs.readFileSync('./media/menu.mp3'), mimetype:'audio/mpeg', ptt: true});
 }
 break
 //========[ Owner Fitur ]========//
