@@ -349,7 +349,6 @@ break
   await lubyz.sendMessage(m.chat, { react: { text: `🏓`, key: m.key } });
 
   const start = Date.now();
-  const tempMsg = await lubyz.sendMessage(m.chat, { text: `> *𝐏𝐈𝐍𝐆 𝐓𝐄𝐒𝐓𝐈𝐍𝐆...*` }, { quoted: m });
   const ping = Date.now() - start;
 
   const caption = `
@@ -381,16 +380,15 @@ break
     },
     headerType: 1,
     viewOnce: true
-  }, { quoted: tempMsg });
+  }, { quoted: m });
 
-  break; // ✅ moved inside
+  break;
 }
 
 case 'ping2': {
   await lubyz.sendMessage(m.chat, { react: { text: `📶`, key: m.key } });
 
   const start = Date.now();
-  const tempMsg = await lubyz.sendMessage(m.chat, { text: `> *𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃...*` }, { quoted: m });
   const ping = Date.now() - start;
 
   const caption = `
@@ -419,9 +417,9 @@ case 'ping2': {
     },
     headerType: 1,
     viewOnce: true
-  }, { quoted: tempMsg });
+  }, { quoted: m });
 
-  break; // ✅ moved inside
+  break;
 }
 
  case 'addowner': {
