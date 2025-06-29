@@ -428,7 +428,7 @@ lubyz.sendMessage(m.chat, {
   ],
   headerType: 1,
   viewOnce: true
-}, { quoted: qtext2 });
+}, { quoted: m });
 
 lubyz.sendMessage(m.chat, { 
   audio: { url: 'https://files.catbox.moe/l8inzd.mp3' }, 
