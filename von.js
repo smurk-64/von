@@ -367,7 +367,7 @@ await lubyz.sendMessage(m.chat, { react: { text: `🖕`, key: m.key }});
 const imgmenu = 'https://files.catbox.moe/mtvyj5.jpg'; // replace with your image if needed
 const bugmenu = 
 `
-⛧━━━━━━━━⟡⟡⟡━━━━━━⛧
+⛧━━𝐊𝐈𝐍𝐆𝐕𝐎𝐍⟡⟡⟡𝗕𝗨𝗚━━⛧
   ⟦ 𖤐 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨 𖤐 ⟧
 ⛧━━━━━━━━⟡⟡⟡━━━━━━⛧
 ⟬ 🥵  •  *.𝗫-𝗩𝗢𝗡*
@@ -393,13 +393,13 @@ lubyz.sendMessage(m.chat, {
     {
       buttonId: 'action',
       buttonText: {
-        displayText: 'kingvon'
+        displayText: '𝐊𝐈𝐍𝐆𝐕𝐎𝐍'
       },
       type: 4,
       nativeFlowInfo: {
         name: 'single_select',
         paramsJson: JSON.stringify({
-          title: 'kingvon',
+          title: '𝐊𝐈𝐍𝐆𝐕𝐎𝐍',
           sections: [
             {
               title: namaowner || "Owner", // fallback if namaowner is undefined
@@ -412,7 +412,7 @@ lubyz.sendMessage(m.chat, {
                   id: '.ownermenu',
                 },
 		{
-                  header: 'ᴏᴡɴᴇʀ ᴍᴇɴᴜ',
+                  header: 'ᴀʟʟ ᴍᴇɴᴜ',
                   title: 'All menu',
                   description: 'Display full menu',
                   id: '.menu',
