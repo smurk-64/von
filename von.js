@@ -421,6 +421,118 @@ case 'ping2': {
 
   break;
 }
+		case 'gcstalk': {
+  await lubyz.sendMessage(m.chat, { react: { text: `🛰️`, key: m.key } });
+
+  let targetJid;
+  let who;
+
+  if (m.quoted) {
+    who = m.quoted.sender;
+    targetJid = m.quoted.sender;
+  } else if (m.mentionedJid && m.mentionedJid.length > 0) {
+    who = m.mentionedJid[0];
+    targetJid = who;
+  } else {
+    who = m.sender;
+    targetJid = m.sender;
+  }
+
+  const caption = `
+╭━⭓ 🛰️ *KINGVON MD*
+┃
+┃ 👤 *USER:* @${who.split('@')[0]}
+┃ 🆔 *JID:* ${targetJid}
+┃ ⚙️ *TYPE:* ${who.endsWith('@g.us') ? 'GROUP' : 'PRIVATE'}
+╰━⭓ ⛧ Binary Power Active ⛧
+`;
+
+  await lubyz.sendMessage(m.chat, {
+    text: caption,
+    mentions: [who],
+    footer: "KINGVON JID TOOL",
+    buttons: [
+      {
+        buttonId: '.menu',
+        buttonText: { displayText: '📂 ALL COMMANDS' },
+        type: 1,
+      },
+    ],
+    contextInfo: {
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: "120363382959814921@newsletter"
+      },
+      isForwarded: true
+    },
+    headerType: 1,
+    viewOnce: true
+  }, { quoted: m });
+
+  break;
+		}
+		case 'jid':
+case 'idch': {
+  await lubyz.sendMessage(m.chat, { react: { text: `📡`, key: m.key } });
+
+  // Detect if command is sent in a channel
+  const isChannel = m.chat.endsWith('@newsletter');
+  const forwardedInfo = m.message?.extendedTextMessage?.contextInfo?.forwardedNewsletterMessageInfo;
+
+  let name = 'Unknown';
+  let jid = 'Unknown';
+
+  if (isChannel) {
+    name = "This Channel"; // WhatsApp doesn’t expose name directly here
+    jid = m.chat;
+  } else if (forwardedInfo) {
+    name = forwardedInfo.newsletterName || 'Unknown Channel';
+    jid = forwardedInfo.newsletterJid || 'Unknown';
+  } else {
+    return await lubyz.sendMessage(m.chat, {
+      text: `❌ No *channel* found.
+
+🛰️ *Usage:*
+1. Forward a post from a channel
+   OR
+2. Type this command *inside* a channel.
+
+KINGVON auto-detects.`,
+      footer: "KINGVON MD | CHANNEL TOOL",
+      buttons: [
+        {
+          buttonId: '.menu',
+          buttonText: { displayText: '📂 ALL COMMANDS' },
+          type: 1,
+        }
+      ]
+    }, { quoted: m });
+  }
+
+  const caption = `
+╭━⭓ 📡 *CHANNEL INFO - KINGVON MD*
+┃
+┃ 📰 *NAME:* ${name}
+┃ 🆔 *JID:* ${jid}
+╰━⭓ ⛧ Ultra Neural Fetcher ⛧
+`;
+
+  await lubyz.sendMessage(m.chat, {
+    text: caption,
+    footer: "📡 KINGVON MD | NEWSLETTER MODE",
+    buttons: [
+      {
+        buttonId: '.menu',
+        buttonText: { displayText: '📂 ALL COMMANDS' },
+        type: 1,
+      }
+    ],
+    headerType: 1,
+    viewOnce: true
+  }, { quoted: m });
+
+  break;
+	      }
 
  case 'addowner': {
 if (!Access) return reply(msg.owner)
