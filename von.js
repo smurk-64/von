@@ -761,7 +761,7 @@ case 'blok': {
     await sleep(500);
 
     let blok = q.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-    await conn.updateBlockStatus(blok, 'block');
+    await lubyz.updateBlockStatus(blok, 'block');
 
     const blockText = `✅ Successfully blocked @${blok.split('@')[0]}`;
 
@@ -798,7 +798,7 @@ case 'unblok': {
     await sleep(500);
 
     let unblok = q.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-    await conn.updateBlockStatus(unblok, 'unblock');
+    await lubyz.updateBlockStatus(unblok, 'unblock');
 
     const unblockText = `✅ Successfully unblocked @${unblok.split('@')[0]}`;
 
