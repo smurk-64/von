@@ -395,13 +395,13 @@ lubyz.sendMessage(m.chat, {
     {
       buttonId: 'action',
       buttonText: {
-        displayText: 'ＫＩＮＧＶＯＮＦＩＸＥＲ'
+        displayText: 'kingvon'
       },
       type: 4,
       nativeFlowInfo: {
         name: 'single_select',
         paramsJson: JSON.stringify({
-          title: 'ＫＩＮＧＶＯＮＦＩＸＥＲ',
+          title: 'kingvon',
           sections: [
             {
               title: namaowner || "Owner", // fallback if namaowner is undefined
