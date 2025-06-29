@@ -475,65 +475,29 @@ case 'ping2': {
 case 'idch': {
   await lubyz.sendMessage(m.chat, { react: { text: `📡`, key: m.key } });
 
-  // Detect if command is sent in a channel
   const isChannel = m.chat.endsWith('@newsletter');
   const forwardedInfo = m.message?.extendedTextMessage?.contextInfo?.forwardedNewsletterMessageInfo;
 
-  let name = 'Unknown';
-  let jid = 'Unknown';
+  let jid = null;
 
   if (isChannel) {
-    name = "This Channel"; // WhatsApp doesn’t expose name directly here
     jid = m.chat;
   } else if (forwardedInfo) {
-    name = forwardedInfo.newsletterName || 'Unknown Channel';
-    jid = forwardedInfo.newsletterJid || 'Unknown';
+    jid = forwardedInfo.newsletterJid;
   } else {
     return await lubyz.sendMessage(m.chat, {
-      text: `❌ No *channel* found.
+      text: `❌ *Channel JID not found.*
 
-🛰️ *Usage:*
-1. Forward a post from a channel
-   OR
-2. Type this command *inside* a channel.
-
-KINGVON auto-detects.`,
-      footer: "KINGVON MD | CHANNEL TOOL",
-      buttons: [
-        {
-          buttonId: '.menu',
-          buttonText: { displayText: '📂 ALL COMMANDS' },
-          type: 1,
-        }
-      ]
-    }, { quoted: m });
+🛰️ Forward a post *from a WhatsApp channel*,  
+or type this command *inside the channel*.`,
+      quoted: m
+    });
   }
 
-  const caption = `
-╭━⭓ 📡 *CHANNEL INFO - KINGVON MD*
-┃
-┃ 📰 *NAME:* ${name}
-┃ 🆔 *JID:* ${jid}
-╰━⭓ ⛧ Ultra Neural Fetcher ⛧
-`;
-
-  await lubyz.sendMessage(m.chat, {
-    text: caption,
-    footer: "📡 KINGVON MD | NEWSLETTER MODE",
-    buttons: [
-      {
-        buttonId: '.menu',
-        buttonText: { displayText: '📂 ALL COMMANDS' },
-        type: 1,
-      }
-    ],
-    headerType: 1,
-    viewOnce: true
-  }, { quoted: m });
- await lubyz.sendMessage(m.chat, { text: jid }, { quoted: m });
+  await lubyz.sendMessage(m.chat, { text: jid }, { quoted: m });
 
   break;
-	      }
+}
 
  case 'addowner': {
 if (!Access) return reply(msg.owner)
