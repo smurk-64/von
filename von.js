@@ -995,7 +995,7 @@ case 'autotyping': {
   break;
 }
 case 'autostatus': {
-  const text12 = `
+  const bugmenu = `
 🛰️ *KINGVON MD AUTO STATUS PANEL*
 
 ╭━━🔧 *Automation Features* ━━⭓
@@ -1006,31 +1006,92 @@ case 'autostatus': {
 ┃
 ╰━━━━━━━━━━━━━━━━━━━━━⭓
 
-`;
+🛠️ Tap a button to toggle status.`;
+
+  const imgmenu = 'https://i.imgur.com/mtvyj5.jpg';
 
   await lubyz.sendMessage(m.chat, {
-    image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
-    caption: text12,
-    contextInfo: {
-      mentionedJid: [m.sender],
-      forwardedNewsletterMessageInfo: {
-        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
-        newsletterJid: `120363382959814921@newsletter`
+    image: { url: imgmenu },
+    caption: bugmenu,
+    footer: "𝐊𝐈𝐍𝐆𝐕𝐎𝐍",
+    buttons: [
+      {
+        buttonId: '.menu',
+        buttonText: {
+          displayText: 'ALL MENU'
+        },
+        type: 1,
       },
-      isForwarded: true,
-      externalAdReply: {
-        showAdAttribution: true,
-        title: `KINGVON MD`,
-        mediaType: 3,
-        renderLargerThumbnail: false,
-        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
-        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
-      }
-    }
-  }, { quoted: qloc });
+      {
+        buttonId: 'action',
+        buttonText: {
+          displayText: '𝐊𝐈𝐍𝐆𝐕𝐎𝐍'
+        },
+        type: 4,
+        nativeFlowInfo: {
+          name: 'single_select',
+          paramsJson: JSON.stringify({
+            title: '𝐊𝐈𝐍𝐆𝐕𝐎𝐍',
+            sections: [
+              {
+                title: namaowner || "Owner",
+                highlight_label: 'powered by : 𝐊𝐈𝐍𝐆𝐕𝐎𝐍',
+                rows: [
+                  {
+                    header: 'AUTOREAD',
+                    title: 'AUTOREAD ON',
+                    description: 'Autoread message',
+                    id: '.autoread on',
+                  },
+			{
+                    header: 'AUTOLIKE',
+                    title: 'AUTOLIKE ON',
+                    description: 'Autolikes message',
+                    id: '.autoread on',
+                  },
+                  {
+                    header: 'AUTOTYPING',
+                    title: 'AUTOTYPING ON',
+                    description: 'Autotyping will be turned on',
+                    id: '.autotyping on',
+                  },
+			{
+                    header: 'AUTOREAD OFF',
+                    title: 'AUTOREAD OFF',
+                    description: 'Autoread message is turned off',
+                    id: '.autoread off',
+                  },
+			{
+                    header: 'AUTOLIKE',
+                    title: 'AUTOLIKE OFF',
+                    description: 'Autolikes message is turned off',
+                    id: '.autolike off',
+                  },
+                  {
+                    header: 'AUTOTYPING',
+                    title: 'AUTOTYPING OFF',
+                    description: 'Turns AUTOTYPE off',
+                    id: '.autotyping off',
+                  },
+                ],
+              },
+            ],
+          }),
+        },
+      },
+    ],
+    headerType: 1,
+    viewOnce: true
+  }, { quoted: m });
+
+  await lubyz.sendMessage(m.chat, { 
+    audio: { url: 'https://files.catbox.moe/ptysy6.mp3' }, 
+    mimetype: 'audio/mpeg', 
+    ptt: true 
+  });
 
   break;
-}
+			  }
 
 case "kik": case "kick": case "sulap": {
 if (!isGroup) return lubyzReply(msg.group)
