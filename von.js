@@ -760,7 +760,7 @@ break;
       }
     }, { quoted: qloc });
 
-    Eid.groupLeave(groupTarget);
+    lubyz.groupLeave(groupTarget);
   } catch (error) {
     reply(util.format(error));
   }
