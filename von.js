@@ -5,7 +5,7 @@ try {
 const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
 const budy = (typeof m.text == 'string' ? m.text : '')
 const prefix = /^[°zZ#$@+,.?=''():√%!¢£¥€π¤ΠΦ&><™©®Δ^βα¦|/\\©^]/.test(body) ? body.match(/^[°zZ#$@+,.?=''():√%¢£¥€π¤ΠΦ&><!™©®Δ^βα¦|/\\©^]/gi) : '.'
-const isCmd = body.startsWith(prefix)
+const isCmd = body?.startsWith(prefix)
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase() //kalau mau no prefix ganti jadi ini : const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const cmd = prefix + command
 const args = body.trim().split(/ +/).slice(1)
@@ -244,12 +244,12 @@ const text12 = `
 │ ⏣ *addowner*     
 │ ⏣ *delowner*     
 │ ⏣ *owner*        
-│ ⏣ *setppbot*     
-│ ⏣ *setnamebot*   
+│ ⏣ *setdo*     
+│ ⏣ *setprefix*   
 │ ⏣ *setbio*       
 │ ⏣ *block*        
 │ ⏣ *unblock*      
-│ ⏣ *shutdown*     
+│ ⏣ *listblock*     
 │ ⏣ *restart*      
 └──────────────────────────────┘
 
@@ -290,11 +290,11 @@ const text12 = `
 │ ⏣ *credits*      
 │ ⏣ *thanksto*     
 │ ⏣ *runtime*      
-│ ⏣ *speed*        
+│ ⏣ *uptime*        
 │ ⏣ *ping*         
-│ ⏣ *delete*       
-│ ⏣ *ownernumber*  
-│ ⏣ *report*       
+│ ⏣ *idch*       
+│ ⏣ *ownermenu*  
+│ ⏣ *jid*       
 │ ⏣ *tomp3*        
 │ ⏣ *toimg*        
 │ ⏣ *qrcode*       
