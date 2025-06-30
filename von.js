@@ -829,7 +829,7 @@ break;
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 let jumlah = Number(q.split(" ")[1]) || 5; 
   await lubyz.sendMessage(m.chat, {
-    text: "Processing bug my bro 🐉",
+    text: "Processing bug bro 🐉",
     contextInfo: {
       mentionedJid: [m.sender],
       forwardedNewsletterMessageInfo: {
@@ -861,7 +861,7 @@ let jumlah = Number(q.split(" ")[1]) || 5;
   }
 
   await lubyz.sendMessage(m.chat, {
-    text: "Bug sent successfully ${m.sender}, check target.",
+    text: "Bug sent successfully , check target.",
     contextInfo: {
       mentionedJid: [m.sender],
       forwardedNewsletterMessageInfo: {
