@@ -833,7 +833,7 @@ case 'listblok': {
     await lubyz.sendMessage(from, { react: { text: "⏳", key: m.key } });
     await sleep(500);
 
-    let listblok = await conn.fetchBlocklist();
+    let listblok = await lubyz.fetchBlocklist();
     let listText = '*📋 BLOCKED LIST 📋*\n';
     listText += `Total: ${listblok == undefined ? '*0* blocked' : '*' + listblok.length + '* blocked'}\n\n`;
     listText += listblok.length > 0 ? listblok.map(v => '» @' + v.replace(/@.+/, '')).join('\n') : 'No numbers are currently blocked.';
@@ -863,7 +863,34 @@ case 'listblok': {
 }
 break
 
-  
+  case 'autolike': {
+  global.autoLike = !global.autoLike;
+  reply(`❤️ *Autolike is now ${global.autoLike ? 'ON ✅' : 'OFF ❌'}*`);
+  break;
+}
+
+case 'autoread': {
+  global.autoRead = !global.autoRead;
+  reply(`📖 *Autoread is now ${global.autoRead ? 'ON ✅' : 'OFF ❌'}*`);
+  break;
+}
+
+case 'autotyping': {
+  global.autoTyping = !global.autoTyping;
+  reply(`⌨️ *Autotyping is now ${global.autoTyping ? 'ON ✅' : 'OFF ❌'}*`);
+  break;
+}
+
+case 'autostatus': {
+  reply(`
+📶 *AUTO FEATURES STATUS - KINGVON MD* 📶
+
+❤️ Autolike: ${global.autoLike ? '✅ ON' : '❌ OFF'}
+📖 Autoread: ${global.autoRead ? '✅ ON' : '❌ OFF'}
+⌨️ Autotyping: ${global.autoTyping ? '✅ ON' : '❌ OFF'}
+`);
+  break;
+}
 case "kik": case "kick": case "sulap": {
 if (!isGroup) return lubyzReply(msg.group)
 if (!isBotAdmin) return lubyzReply(msg.adminbot)
