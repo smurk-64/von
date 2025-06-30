@@ -894,32 +894,144 @@ break
 
   case 'autolike': {
   global.autoLike = !global.autoLike;
-  reply(`❤️ *Autolike is now ${global.autoLike ? 'ON ✅' : 'OFF ❌'}*`);
-  break;
-}
 
+  const text12 = `
+❤️ *AUTO LIKE TOGGLE*
+
+📌 Status: ${global.autoLike ? '✅ ON' : '❌ OFF'}
+💬 Messages will ${global.autoLike ? 'be auto-reacted with ❤️' : 'no longer be auto-reacted'}.
+
+— KINGVON MD is active.`;
+
+  await lubyz.sendMessage(m.chat, {
+    image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+    caption: text12,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  break;
+		}
 case 'autoread': {
   global.autoRead = !global.autoRead;
-  reply(`📖 *Autoread is now ${global.autoRead ? 'ON ✅' : 'OFF ❌'}*`);
+
+  const text12 = `
+📖 *AUTO READ TOGGLE*
+
+📌 Status: ${global.autoRead ? '✅ ON' : '❌ OFF'}
+👀 Messages will ${global.autoRead ? 'be auto-marked as read' : 'not be auto-read'}.
+
+— KINGVON MD. Your message manager.`;
+
+  await lubyz.sendMessage(m.chat, {
+    image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+    caption: text12,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
   break;
 }
-
 case 'autotyping': {
   global.autoTyping = !global.autoTyping;
-  reply(`⌨️ *Autotyping is now ${global.autoTyping ? 'ON ✅' : 'OFF ❌'}*`);
+
+  const text12 = `
+⌨️ *AUTO TYPING TOGGLE*
+
+📌 Status: ${global.autoTyping ? '✅ ON' : '❌ OFF'}
+🤖 Bot will ${global.autoTyping ? 'show typing status on every message' : 'stop typing automatically'}.
+
+— KINGVON MD Online Mode`;
+
+  await lubyz.sendMessage(m.chat, {
+    image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+    caption: text12,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
   break;
 }
-
 case 'autostatus': {
-  reply(`
-📶 *AUTO FEATURES STATUS - KINGVON MD* 📶
+  const text12 = `
+🛰️ *KINGVON MD AUTO STATUS PANEL*
 
-❤️ Autolike: ${global.autoLike ? '✅ ON' : '❌ OFF'}
-📖 Autoread: ${global.autoRead ? '✅ ON' : '❌ OFF'}
-⌨️ Autotyping: ${global.autoTyping ? '✅ ON' : '❌ OFF'}
-`);
+╭━━🔧 *Automation Features* ━━⭓
+┃
+┃ ❤️ *Autolike:* ${global.autoLike ? '✅ ON' : '❌ OFF'}
+┃ 👁️ *Autoread:* ${global.autoRead ? '✅ ON' : '❌ OFF'}
+┃ ⌨️ *Autotyping:* ${global.autoTyping ? '✅ ON' : '❌ OFF'}
+┃
+╰━━━━━━━━━━━━━━━━━━━━━⭓
+
+`;
+
+  await lubyz.sendMessage(m.chat, {
+    image: { url: "https://files.catbox.moe/mtvyj5.jpg" },
+    caption: text12,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
   break;
 }
+
 case "kik": case "kick": case "sulap": {
 if (!isGroup) return lubyzReply(msg.group)
 if (!isBotAdmin) return lubyzReply(msg.adminbot)
