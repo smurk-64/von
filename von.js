@@ -891,24 +891,34 @@ case 'listblok': {
 }
 break
 		case 'setdp': {
-    const qmsg = m.quoted ? m.quoted : m;
-    const mime = (qmsg.msg || qmsg).mimetype || '';
+    if (!m.quoted || !m.quoted.imageMessage) return reply('📸 Reply to an image with *setdp* to set as display picture.');
 
-    if (!/image/.test(mime)) return reply(`❌ Reply to an image to set as bot display picture.`);
+    await lubyz.sendMessage(m.chat, { react: { text: "🖼️", key: m.key } });
 
-    let media = await qmsg.download();
-    if (!media) return reply("⚠️ Failed to download image.");
+    const media = await lubyz.downloadAndSaveMediaMessage(m.quoted);
+    await lubyz.updateProfilePicture(lubyz.user.id, { url: media });
 
-    const botNumber = lubyz.user.id.split(':')[0] + '@s.whatsapp.net';
-    await lubyz.updateProfilePicture(botNumber, media);
-    reply(`✅ Bot profile picture updated.`);
+    await lubyz.sendMessage(m.chat, {
+        text: '✅ *Bot DP updated successfully!*',
+        contextInfo: {
+            mentionedJid: [m.sender]
+        }
+    }, { quoted: m });
+
+    fs.unlinkSync(media); // remove file after use
 }
 break;
-		case 'setprefix': {
-    if (!text) return reply(`Example: *${prefix}setprefix !*`);
+	case 'setprefix': {
+    if (!text) return reply('✏️ *Please provide a new prefix!*\n\nExample: `.setprefix !`');
 
-    prefix = text.trim()[0]; // update global prefix variable
-    reply(`✅ Prefix changed to: *${prefix}*`);
+    global.prefa = text; // assuming `prefa` is your global prefix
+
+    await lubyz.sendMessage(m.chat, {
+        text: `✅ *Prefix successfully updated to:* \`${text}\``,
+        contextInfo: {
+            mentionedJid: [m.sender]
+        }
+    }, { quoted: m });
 }
 break;
 
