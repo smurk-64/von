@@ -996,17 +996,15 @@ case 'autotyping': {
 }
 case 'autostatus': {
   const bugmenu = `
-🛰️ *KINGVON MD AUTO STATUS PANEL*
+🛰️ *KINGVON MD*
 
-╭━━🔧 *Automation Features* ━━⭓
-┃
+╭━━🔧 *Features* ━━⭓
 ┃ ❤️ *Autolike:* ${global.autoLike ? '✅ ON' : '❌ OFF'}
 ┃ 👁️ *Autoread:* ${global.autoRead ? '✅ ON' : '❌ OFF'}
 ┃ ⌨️ *Autotyping:* ${global.autoTyping ? '✅ ON' : '❌ OFF'}
-┃
-╰━━━━━━━━━━━━━━━━━━━━━⭓
+╰━━━━━━━━━━━━━━━━⭓
 
-🛠️ Tap a button to toggle status.`;
+🛠️✅✅✅✅✅✅✅✅.`;
 
   const imgmenu = 'https://files.catbox.moe/mtvyj5.jpg';
 
