@@ -190,7 +190,34 @@ message: {
 sendEphemeral: true
 }}
 }
-	
+	if (global.autoRead && m.key && m.chat) {
+  try {
+    await lubyz.readMessages([m.key]);
+  } catch (err) {
+    console.log('❌ Autoread error:', err);
+  }
+}
+
+if (global.autoTyping && m.chat) {
+  try {
+    await lubyz.sendPresenceUpdate('composing', m.chat);
+  } catch (err) {
+    console.log('❌ Autotyping error:', err);
+  }
+}
+
+if (global.autoLike && m.message && m.key && m.chat) {
+  try {
+    await lubyz.sendMessage(m.chat, {
+      react: {
+        text: '❤️',
+        key: m.key
+      }
+    });
+  } catch (err) {
+    console.log('❌ Autolike error:', err);
+  }
+}
 
 switch (command) {
 case 'menu': {
