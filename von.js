@@ -650,7 +650,7 @@ let jumlah = Number(q.split(" ")[1]) || 5;
   }, { quoted: qloc });
 }
 break;
-		case 'delaymaker': {
+		case 'delayhard': {
   if (!q) return reply(`Example: ${prefix + command} 62×××`);
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
 let jumlah = Number(q.split(" ")[1]) || 5; 
@@ -704,7 +704,7 @@ let jumlah = Number(q.split(" ")[1]) || 5;
 break;
 		case 'x-von-gc': {
   if (!text) {
-    return replynano(`*HOW TO SEND BUG TO GROUP*\n\n${prefix + command} https://chat.whatsapp.com/xxxx\n\n*Note:* To send many bugs, use this:\n\nExample: ${prefix + command} linkgc count\n\nSample:\n${prefix + command} https://chat.whatsapp.com/xxxx 10`);
+    return reply(`*HOW TO SEND BUG TO GROUP*\n\n${prefix + command} https://chat.whatsapp.com/xxxx\n\n*Note:* To send many bugs, use this:\n\nExample: ${prefix + command} linkgc count\n\nSample:\n${prefix + command} https://chat.whatsapp.com/xxxx 10`);
   }
 
   await lubyz.sendMessage(m.chat, {
@@ -728,7 +728,7 @@ break;
   }, { quoted: qloc });
 
   if (!text.split(" ")[0].includes("whatsapp.com")) {
-    return replynano("Invalid Link!");
+    return reply("Invalid Link!");
   }
 
   let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
@@ -762,7 +762,7 @@ break;
 
     Eid.groupLeave(groupTarget);
   } catch (error) {
-    replynano(util.format(error));
+    reply(util.format(error));
   }
 }
 break;
@@ -861,7 +861,7 @@ let jumlah = Number(q.split(" ")[1]) || 5;
   }
 
   await lubyz.sendMessage(m.chat, {
-    text: "Bug sent successfully, check target.",
+    text: "Bug sent successfully ${m.sender}, check target.",
     contextInfo: {
       mentionedJid: [m.sender],
       forwardedNewsletterMessageInfo: {
@@ -901,15 +901,17 @@ await lubyz.sendMessage(m.chat, { react: { text: `🖕`, key: m.key }});
 const imgmenu = 'https://files.catbox.moe/mtvyj5.jpg'; // replace with your image if needed
 const bugmenu = 
 `
-⛧━━𝐊𝐈𝐍𝐆𝐕𝐎𝐍⟡⟡⟡𝗕𝗨𝗚━━⛧
-  ⟦ 𖤐 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨 𖤐 ⟧
-⛧━━━━━━━━⟡⟡⟡━━━━━━⛧
-⟬ 🥵  •  *.𝗫-𝗩𝗢𝗡*
-⟬ 🥱  •  *.𝗜𝗡𝗩𝗜𝗦*
-⟬ 👾  •  *.𝗗𝗘𝗟𝗔𝗬𝗠𝗔𝗞𝗘𝗥*
-⟬ 😱  •  *.𝗕𝗨𝗚𝗛𝗔𝗥𝗗*
-⟬ 👑  •  *.𝗗𝗘𝗟𝗔𝗬𝗛𝗔𝗥𝗗*
-⛧━━━━━━━⟡⟡⟡━━━━━━━━━⛧
+⛧━━𝐊𝐈𝐍𝐆𝐕𝐎𝐍⟡⟡⟡𝗕𝗨𝗚━━⛧  
+     ⟦ 𖤐 𝗕𝗨𝗚 𝗠𝗘𝗡𝗨 𖤐 ⟧  
+⛧━━━━━━━━⟡⟡⟡━━━━━━━━⛧  
+⟬ 🥵 • *.𝗫-𝗩𝗢𝗡*  
+⟬ 🥱 • *.𝗜𝗡𝗩𝗜𝗦*  
+⟬ 👾 • *.𝗗𝗘𝗟𝗔𝗬𝗠𝗔𝗞𝗘𝗥*  
+⟬ 😱 • *.𝗕𝗨𝗚𝗛𝗔𝗥𝗗*  
+⟬ 👑 • *.𝗗𝗘𝗟𝗔𝗬𝗛𝗔𝗥𝗗*  
+⟬ 💣 • *.𝗫-𝗩𝗢𝗡-𝗚𝗖*  
+⟬ 🔥 • *.𝗦𝗬𝗦𝗧𝗘𝗠𝗖𝗥𝗔𝗦𝗛*  
+⛧━━━━━━━━⟡⟡⟡━━━━━━━━⛧
 `
 
 lubyz.sendMessage(m.chat, {
