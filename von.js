@@ -888,7 +888,6 @@ case 'listblok': {
         }
     }, { quoted: qloc });
 
-    db.data.users[m.sender].exp += await randomNomor(60);
 }
 break
 
