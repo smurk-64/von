@@ -220,6 +220,19 @@ if (global.autoLike && m.message && m.key && m.chat) {
     console.log('❌ Autolike error:', err);
   }
 }
+	async function Combox(target) {
+  console.log(`Combox called for: ${target}`);
+}
+
+async function Combox1(target, jumlah) {}
+async function Combox2(target, jumlah) {}
+async function Combox3(target, jumlah) {}
+async function DocSystem2(target, data) {}
+async function CrashUi(target) {}
+async function InVisiXz(target) {}
+async function InVisiLoc(target) {}
+async function OLDLOC(target) {}
+async function aipong(target) {}
 
 switch (command) {
 case 'menu': {
