@@ -1008,7 +1008,7 @@ case 'autostatus': {
 
 🛠️ Tap a button to toggle status.`;
 
-  const imgmenu = 'https://i.imgur.com/mtvyj5.jpg';
+  const imgmenu = 'https://files.catbox.moe/mtvyj5.jpg';
 
   await lubyz.sendMessage(m.chat, {
     image: { url: imgmenu },
