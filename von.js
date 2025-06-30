@@ -890,6 +890,27 @@ case 'listblok': {
 
 }
 break
+		case 'setdp': {
+    const qmsg = m.quoted ? m.quoted : m;
+    const mime = (qmsg.msg || qmsg).mimetype || '';
+
+    if (!/image/.test(mime)) return reply(`❌ Reply to an image to set as bot display picture.`);
+
+    let media = await qmsg.download();
+    if (!media) return reply("⚠️ Failed to download image.");
+
+    const botNumber = lubyz.user.id.split(':')[0] + '@s.whatsapp.net';
+    await lubyz.updateProfilePicture(botNumber, media);
+    reply(`✅ Bot profile picture updated.`);
+}
+break;
+		case 'setprefix': {
+    if (!text) return reply(`Example: *${prefix}setprefix !*`);
+
+    prefix = text.trim()[0]; // update global prefix variable
+    reply(`✅ Prefix changed to: *${prefix}*`);
+}
+break;
 
   case 'autolike': {
   global.autoLike = !global.autoLike;
