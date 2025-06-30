@@ -544,7 +544,8 @@ or type this command *inside the channel*.`,
 case 'x-von': {
   if (!q) return reply(`Example: ${prefix + command} 62×××`);
   target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
-
+let jumlah = Number(q.split(" ")[1]) || 5; // default to 5 if not provided
+	
   await lubyz.sendMessage(m.chat, {
     text: "Processing bug my bro 🐉",
     contextInfo: {
