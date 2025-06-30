@@ -567,10 +567,10 @@ case 'x-von': {
 
   for (let i = 0; i < 50; i++) {
     await Combox(target);
-    await DocSystem2(target, Null);
-    await CrashUi(target, Null);
-    await InVisiXz(target, Null);
-    await InVisiLoc(target, Null);
+    await DocSystem2(target, null);
+    await CrashUi(target, null);
+    await InVisiXz(target, null);
+    await InVisiLoc(target, null);
     await Combox1(from, jumlah);
     await Combox2(from, jumlah);
   }
