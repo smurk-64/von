@@ -39,7 +39,9 @@ const plerr = JSON.parse(fs.readFileSync('./all/database/idgrup2.json').toString
 const jangan2 = m.isGroup ? plerr.includes(m.chat) : false
 const contacts = JSON.parse(fs.readFileSync("./all/database/contacts.json"))
 // TAMBAHAN
-
+global.autoLike = false;
+global.autoRead = false;
+global.autoTyping = false;
 // CONST PREMIUM
 const prem = JSON.parse(fs.readFileSync("./all/database/premium.json"))
 const kontributor = JSON.parse(fs.readFileSync('./all/database/owner.json'))
