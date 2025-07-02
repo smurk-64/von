@@ -1,4 +1,4 @@
-/*CARINA BASES*/
+/*Von BASES*/
 
 require("./all/module.js")
 const { color } = require('./all/function')
