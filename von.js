@@ -357,6 +357,39 @@ const text12 = `
      );
 }
  break;
+		case 'repo': {
+  await lubyz.sendMessage(m.chat, {
+    text: `╭━━━[ *👾 KINGVON MD – BOT REPO* ]━━━⬣  
+┃  
+┃ 🔗 *GitHub:*  
+┃ https://github.com/smurk-64/von.git  
+┃ 💡 *Dev Tip:*  
+┃ Use wisely  🐲  
+┃  
+┃ 📣 *Join Updates:*  
+┃ https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y  
+┃  
+╰━━━〔 ⚙️ POWERED BY KINGVON BASE 〕━━⬣`,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        title: "👾 KINGVON MD – OFFICIAL REPO",
+        body: "👾 KINGVON MD – OFFICIAL REPO 🔥",
+        mediaType: 3,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: "https://github.com/smurk-64/von.git",
+        showAdAttribution: true,
+        renderLargerThumbnail: true
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
         
 switch (command) {
   case 'linkgroup':
