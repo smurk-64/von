@@ -2,10 +2,6 @@
 */
 module.exports = async (lubyz, m, store) => {
 try {
-const reply = async (text) => {
-  return lubyz.sendMessage(m.chat, { text }, { quoted: m });
-};
-const reply2 = reply; // Same behavior as reply
 const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype === 'interactiveResponseMessage') ? JSON.parse(m.message.interactiveResponseMessage.nativeFlowResponseMessage.paramsJson).id : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
 const budy = (typeof m.text == 'string' ? m.text : '')
 const prefix = /^[°zZ#$@+,.?=''():√%!¢£¥€π¤ΠΦ&><™©®Δ^βα¦|/\\©^]/.test(body) ? body.match(/^[°zZ#$@+,.?=''():√%¢£¥€π¤ΠΦ&><!™©®Δ^βα¦|/\\©^]/gi) : '.'
@@ -365,10 +361,10 @@ const text12 = `
 switch (command) {
   case 'linkgroup':
   case 'linkgc': {
-    if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
+    if (isBan) return reply(mess.ban);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
     await loading();
     let response = await lubyz.groupInviteCode(from);
     lubyz.sendText(from, `https://chat.whatsapp.com/${response}\n\nGroup: ${groupMetadata.subject}`, m, { detectLink: true });
@@ -376,21 +372,21 @@ switch (command) {
   break;
 
   case 'resetlinkgc': {
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
     await loading();
     lubyz.groupRevokeInvite(from);
   }
   break;
 
   case 'sendlinkgc': {
-    if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
+    if (isBan) return reply(mess.ban);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
     await loading();
-    if (!args[0]) return reply2(`Usage: ${prefix + command} 254xxxxxxxx`);
+    if (!args[0]) return reply(`Usage: ${prefix + command} 254xxxxxxxx`);
     let bnnd = text.split("|")[0] + '@s.whatsapp.net';
     let response = await lubyz.groupInviteCode(from);
     lubyz.sendText(bnnd, `https://chat.whatsapp.com/${response}\n\nGroup: ${groupMetadata.subject}`, m, { detectLink: true });
@@ -399,65 +395,65 @@ switch (command) {
 
   case 'kick': {
     if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
-    if (!isAdmins) return reply2(mess.admin);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
+    if (!isAdmins) return reply(mess.admin);
     let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     await lubyz.groupParticipantsUpdate(from, [users], 'remove');
-    reply2(mess.done);
+    reply(mess.done);
   }
   break;
 
   case 'add': {
-    if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
-    if (!isAdmins) return reply2(mess.admin);
+    if (isBan) return reply(mess.ban);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
+    if (!isAdmins) return reply(mess.admin);
     let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     await lubyz.groupParticipantsUpdate(from, [users], 'add');
-    reply2(mess.done);
+    reply(mess.done);
   }
   break;
 
   case 'promote': {
     if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
-    if (!isAdmins) return reply2(mess.admin);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
+    if (!isAdmins) return reply(mess.admin);
     let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     await lubyz.groupParticipantsUpdate(from, [users], 'promote');
-    reply2(mess.done);
+    reply(mess.done);
   }
   break;
 
   case 'demote': {
-    if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
-    if (!isAdmins) return reply2(mess.admin);
+    if (isBan) return reply(mess.ban);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
+    if (!isAdmins) return reply(mess.admin);
     let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     await lubyz.groupParticipantsUpdate(from, [users], 'demote');
-    reply2(mess.done);
+    reply(mess.done);
   }
   break;
 
   case 'hidetag': {
-    if (isBan) return reply2(mess.ban);
-    if (!isCreator) return reply2(mess.owner);
-    if (!m.isGroup) return reply2(mess.group);
-    if (!isBotAdmins) return reply2(mess.badm);
-    if (!isAdmins) return reply2(mess.admin);
+    if (isBan) return reply(mess.ban);
+    if (!isCreator) return reply(mess.owner);
+    if (!m.isGroup) return reply(mess.group);
+    if (!isBotAdmins) return reply(mess.badm);
+    if (!isAdmins) return reply(mess.admin);
     await loading();
     lubyz.sendMessage(from, { text: q || '', mentions: participants.map(a => a.id) }, { quoted: m });
   }
   break;
 
   case 'leave': {
-    if (isBan) return reply2(mess.ban);
+    if (isBan) return reply(mess.ban);
     if (!isCreator) return reply(`Owner Only`);
     await lubyz.groupLeave(m.chat);
     await reply(`Done ✅`);
@@ -466,17 +462,17 @@ switch (command) {
 
   case 'setname':
   case 'setsubject': {
-    if (isBan) return reply2(mess.ban);
-    if (!text) return reply2('Text?');
+    if (isBan) return reply(mess.ban);
+    if (!text) return reply('Text?');
     await lubyz.groupUpdateSubject(m.chat, text)
-      .then(() => reply2(mess.success))
+      .then(() => reply(mess.success))
       .catch((err) => reply2(jsonformat(err)));
   }
   break;
 
   case 'creategc': {
-    if (!isCreator) return reply2(mess.owner);
-    if (!text) return reply2('Group name?');
+    if (!isCreator) return reply(mess.owner);
+    if (!text) return reply('Group name?');
     let cret = await lubyz.groupCreate(text, []);
     let response = await lubyz.groupInviteCode(cret.id);
     let teks = `\`\`\`「  CREATION GROUP MESSAGE  」\`\`\`
