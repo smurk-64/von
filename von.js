@@ -390,6 +390,39 @@ const text12 = `
   }, { quoted: qloc });
 }
 break;
+		case 'alive': {
+  await lubyz.sendMessage(m.chat, { react: { text: `🏇`, key: m.key } });
+
+  await lubyz.sendMessage(m.chat, {
+    text: `╭━━━[ *🤖 KINGVON MD – BOT STATUS* ]━━━⬣  
+┃  
+┃ 🧠 *BOT NAME:* KINGVON MD  
+┃ 🚀 *STATUS:* Online & Fully Operational  
+┃ 🔋 *Uptime:* ${(runtime(process.uptime()))}  
+┃ 📣 *Updates Channel:*  
+┃ https://whatsapp.com/channel/0029Vb5tbcZEKyZEHbicrV1y  
+┃  
+╰━━━〔 🛡 POWERED BY KINGVON BASE 〕━━⬣`,
+    contextInfo: {
+      mentionedJid: [m.sender],
+      forwardedNewsletterMessageInfo: {
+        newsletterName: "Ξ KINGV0N ⋮ BINΔRY BΔSE Ξ ⧉ DEV NESTΞ",
+        newsletterJid: `120363382959814921@newsletter`
+      },
+      isForwarded: true,
+      externalAdReply: {
+        showAdAttribution: true,
+        title: "KINGVON MD IS ONLINE ⚡",
+        body: "...💀...",
+        mediaType: 3,
+        thumbnailUrl: 'https://files.catbox.moe/mtvyj5.jpg',
+        sourceUrl: "https://github.com/smurk-64/von.git",
+        renderLargerThumbnail: true
+      }
+    }
+  }, { quoted: qloc });
+}
+break;
         
 switch (command) {
   case 'linkgroup':
